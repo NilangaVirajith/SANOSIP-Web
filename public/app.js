@@ -12,5 +12,10 @@
                 templateUrl: 'public/views/signup.html',
                 controller: 'UserController'
             })
+        .state('mainboard',{
+            url: '/mainboard',
+            templateUrl: 'public/views/MainBoard.html',
+            controller: ''
+        })
     })
 }());
