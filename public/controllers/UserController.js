@@ -2,6 +2,8 @@ var app = angular.module('SANOSIP');
 
 app.controller('UserController', function($scope, $http){
     
+    $scope.userTypes = ['Student', 'Tutor', 'Non-academic Staff'];
+    
     if(localStorage['User-Data']){
         $scope.loggedIn = true;
     }else{
@@ -20,10 +22,22 @@ app.controller('UserController', function($scope, $http){
     
     $scope.signUp = function(){
         $http.post('user/signup', $scope.newUser).success(function(response){
-            
+            $scope.newUser = {};
+            $scope.selectedItem = "User Type";
         }).error(function(error){
             console.log(error);
         });
+    }
+    
+    $scope.selectedItem;
+    
+    if(!$scope.selectedItem){
+        $scope.selectedItem = "User Type";
+    }
+    
+    $scope.dropboxitemselected = function (item) {
+        $scope.selectedItem = item;
+        $scope.newUser.usertype = item;
     }
     
 })

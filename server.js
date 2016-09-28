@@ -9,7 +9,7 @@ app.use('/public', express.static(__dirname + "/public"));
 app.use('/node_modules', express.static(__dirname + "/node_modules"));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/sanosip');
+mongoose.connect('mongodb://localhost:27017/sanosip_2');
 
 
 app.get('/', function(req, res){
