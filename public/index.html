@@ -7,11 +7,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <link rel="stylesheet" href="public/style/main.css">
+   <!--     <script src="public/style/dashboard.js"></script>   -->
+        
+        
     </head>
         
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 20px;">
+        <nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 20px;">  
             <div class="container" ng-controller="UserController">
                 <div class="col-sm-10 col-sm-offset-4" ng-show="!loggedIn">
                     <div class="row">
@@ -30,11 +34,11 @@
                         
                     </div>
                 </div>
-                <div ng-show="loggedIn">
+                <div ng-show="loggedIn" >
                     
                 </div>
             </div>
-        </nav>
+        </nav>   
         <div ui-view></div>
     </body>
     
@@ -42,6 +46,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="public/app.js"></script>
     <script src="public/controllers/UserController.js"></script>
+    <script src="public/controllers/StudentController.js"></script>
+    <script src="public/controllers/DashboardController.js"></script>
     
     
 </html>

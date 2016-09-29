@@ -15,7 +15,7 @@ app.controller('UserController', function($scope, $http, $state){
         $http.post('user/login', $scope.login).success(function(response){
             localStorage.setItem('User-Data', JSON.stringify(response));
             $scope.loggedIn = true;
-            $state.go('mainboard');
+            $state.go('adminmainboard');
         }).error(function(error){
             console.log(error);
         });
