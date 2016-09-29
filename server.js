@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 var authenticationController = require('./server/authentication-controller');
+var studentcontroller = require('./server/student-controller');
 
 app.use('/public', express.static(__dirname + "/public"));
 app.use('/node_modules', express.static(__dirname + "/node_modules"));
@@ -21,6 +22,7 @@ app.post('/user/login', authenticationController.login);
 
 app.post('/user/signup', authenticationController.signup);
 
+app.post('/student/createstudent', studentcontroller.create);
 
 app.listen(3000, function(){
     console.log("Server running on port 3000");

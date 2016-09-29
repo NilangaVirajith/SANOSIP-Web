@@ -1,8 +1,13 @@
 var app = angular.module('SANOSIP');
 
 app.controller('StudentController', function($scope, $http, $state){
+    
    $scope.createStudent = function(){
-        console.log($scope.student);
+        $http.post('student/createstudent', $scope.student).success(function(response){
+            console.log(response);
+        }).error(function(error){
+            console.log(error);
+        });
    }
    
     $scope.selectedClass;
