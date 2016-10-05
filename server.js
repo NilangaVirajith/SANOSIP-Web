@@ -7,6 +7,7 @@ var authenticationController = require('./server/authentication-controller');
 var studentcontroller = require('./server/student-controller');
 
 app.use('/public', express.static(__dirname + "/public"));
+app.use('/config', express.static(__dirname + "/config"));
 app.use('/node_modules', express.static(__dirname + "/node_modules"));
 app.use(bodyParser.json());
 
@@ -14,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/sanosip_2');
 
 
 app.get('/', function(req, res){
-    res.sendfile('public/index.html');
+    res.sendfile('index.html');
   //  res.send("From Server");
 });
 
